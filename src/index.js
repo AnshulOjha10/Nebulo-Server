@@ -20,12 +20,10 @@ app.use(express.json({ limit: '5mb' }));
 app.use(express.urlencoded({ extended: true, limit: '5mb' }));
 
 app.use(cookieParser());
-app.use(
-  cors({
-    origin: "nebulo-six.vercel.app",  
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: "https://nebulo-six.vercel.app",
+  credentials: true
+}));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
